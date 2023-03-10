@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import com.taek.test.databinding.ActivityRecyclerViewBinding;
 
@@ -29,6 +30,13 @@ public class RecyclerViewActivity extends AppCompatActivity {
         }
 
         adapter = new MyRecyclerViewAdapter(list, this);
+
+        adapter.setOnItemClickListener(new MyRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int pos) {
+                Toast.makeText(getApplicationContext(), list.get(pos).getMainText() + " 클릭", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
