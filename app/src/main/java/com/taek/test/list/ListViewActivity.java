@@ -25,8 +25,8 @@ public class ListViewActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, avengers);
 
-        binding.testListView.setAdapter(adapter);
-        binding.testListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        binding.listView.setAdapter(adapter);
+        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Toast.makeText(getApplicationContext(), avengers[i], Toast.LENGTH_SHORT).show();
