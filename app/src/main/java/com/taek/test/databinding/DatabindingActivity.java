@@ -15,6 +15,7 @@ public class DatabindingActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_databinding);
+
         binding.toggleButton.setOnClickListener(this::toggleViews);
 
         Bio bio = new Bio("RooMedia", "Playing Guitar, Drink Water, ..., etc");
